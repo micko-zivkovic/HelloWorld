@@ -38,6 +38,9 @@ angular.module('starter.controllers', [])
 .controller('MyCtrl', function($scope, $ionicNavBarDelegate){
 	$scope.goBack = function() {
     $ionicNavBarDelegate.back();
+	 $scope.reset = function() {
+        alert('test');
+    };
   };
 })
 
