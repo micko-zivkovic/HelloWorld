@@ -39,13 +39,14 @@ angular.module('starter.controllers', [])
 	$scope.goBack = function() {
 		$ionicNavBarDelegate.back();
 	};
-	$scope.reset = function() {
-        alert('test');
-    };
 })
 
 
-
+.controller('startHome', function($scope){
+	$scope.reset = function() {
+		alert('test');
+	};
+})
 
 
 
