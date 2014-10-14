@@ -7,3 +7,5 @@ document.addEventListener("deviceready", function(){
 	}
  
 });
+
+console.log('test');
