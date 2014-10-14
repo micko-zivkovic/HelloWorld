@@ -44,7 +44,11 @@ angular.module('starter.controllers', [])
 
 .controller('startHome', function($scope){
 	$scope.reset = function() {
-		console.log('test');
+		if(navigator.network.connection.type == Connection.NONE){
+			console.log('No Network');
+		} else {
+			console.log('Yes Network');
+		}
 	};
 })
 
