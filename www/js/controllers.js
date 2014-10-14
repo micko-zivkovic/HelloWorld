@@ -3,7 +3,7 @@ angular.module('starter.controllers', [])
 .controller('startHome', function($scope){
 	$scope.reset = function() {
 		try {
-			console.log(navigator.network.connection.type);
+			console.log(navigator );
 		} catch(err) {
 			console.log(err.message);
 		}
