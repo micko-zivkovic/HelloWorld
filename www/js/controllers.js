@@ -44,7 +44,7 @@ angular.module('starter.controllers', [])
 
 .controller('startHome', function($scope){
 	$scope.reset = function() {
-		alert('test');
+		console.log('test');
 	};
 })
 
