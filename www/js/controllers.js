@@ -11,8 +11,8 @@ angular.module('starter.controllers', [])
 					console.log("Error retrieving position " + e.code + " " + e.message) 
 				}
 			);
-		} catch(err) {
-			console.log(err.message);
+		} catch(e) {
+			console.log(e.message);
 		}
 	};
 })
