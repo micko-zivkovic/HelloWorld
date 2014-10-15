@@ -17,11 +17,6 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       // org.apache.cordova.statusbar required
       StatusBar.styleDefault();
     }
-	if(navigator.network.connection.type == Connection.NONE){
-		console.log('No Network');
-	} else {
-		console.log('Yes Network');
-	}
   });
 })
 

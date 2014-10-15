@@ -20,3 +20,31 @@ angular.module('starter.controllers', [])
 		}
 	};
 })
+
+.controller('startLogin', function($scope){
+	$scope.login = function() {
+		try {
+			var url = "http://igogive.org/endpoint/load-user/";
+			var responsePromise = $http.jsonp( 
+				url, 
+				{ 
+					params: {
+						username: "v1",
+						password: "v2"
+					}
+				}
+			);
+
+			responsePromise.success(function(data) {
+				console.log(data);
+			});
+			
+			responsePromise.error(function() {
+				console.log('AJAX failed.');
+			});
+
+		} catch(e) {
+			console.log(e.message);
+		}
+	};
+})
