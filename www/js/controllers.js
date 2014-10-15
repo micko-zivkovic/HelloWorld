@@ -21,22 +21,23 @@ angular.module('starter.controllers', [])
 	};
 })
 
-.controller('startLogin', function($scope){
+.controller('startLogin', function($scope, $http){
 	$scope.login = function() {
 		try {
 			var url = "http://igogive.org/endpoint/load-user/";
-			var responsePromise = $http.jsonp( 
+			var responsePromise = $http.get( 
 				url, 
 				{ 
 					params: {
-						username: "v1",
-						password: "v2"
+						username: $scope.username,
+						password: $scope.password
 					}
 				}
 			);
 
 			responsePromise.success(function(data) {
 				console.log(data);
+				$scope.toast.show('Hello there!', 'long', 'center', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
 			});
 			
 			responsePromise.error(function() {
