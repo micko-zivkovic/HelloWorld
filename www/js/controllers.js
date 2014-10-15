@@ -3,7 +3,7 @@ angular.module('starter.controllers', [])
 .controller('startHome', function($scope){
 	$scope.reset = function() {
 		try {
-			//console.log(navigator);
+			console.log(navigator);
 			console.log(navigator.hasOwnProperty('geolocation'));
 			/*
 			navigator.geolocation.getCurrentPosition(
