@@ -21,7 +21,7 @@ angular.module('starter.controllers', [])
 	};
 })
 
-.controller('startLogin', function($scope, $http){
+.controller('startLogin', function($scope, $http, $ionicPopup){
 	$scope.login = function() {
 		try {
 			var url = "http://igogive.org/endpoint/load-user/";
