@@ -37,7 +37,10 @@ angular.module('starter.controllers', [])
 
 			responsePromise.success(function(data) {
 				console.log(data);
-				toast.show('Hello there!', 'long', 'center', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
+				$ionicPopup.alert({
+                       title: 'Field!',
+                       template: 'Test'
+                       });
 			});
 			
 			responsePromise.error(function() {
