@@ -21,9 +21,10 @@ angular.module('starter.controllers', [])
 	};
 })
 
-.controller('startLogin', function($scope, $http, $ionicPopup){
+.controller('startLogin', function($scope, $http, $ionicPopup, $ionicLoading){
 	$scope.login = function() {
 		try {
+			$ionicLoading.show({ template: 'Loading...' });
 			var url = "http://igogive.org/endpoint/load-user/";
 			var responsePromise = $http.get( 
 				url, 
@@ -36,6 +37,7 @@ angular.module('starter.controllers', [])
 			);
 
 			responsePromise.success(function(data) {
+				$ionicLoading.hide();
 				console.log(data);
 				$ionicPopup.alert({
                        title: 'Field!',
