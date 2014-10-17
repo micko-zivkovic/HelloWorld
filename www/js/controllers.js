@@ -52,5 +52,23 @@ angular.module('starter.controllers', [])
 		} catch(e) {
 			console.log(e.message);
 		}
-	};
+	}
+	
+	$scope.fb_login = function() {
+		try {
+			if (!window.cordova) {
+				var appId = prompt("Enter FB Application ID", "");
+				facebookConnectPlugin.browserInit(appId);
+			}
+			
+			facebookConnectPlugin.login( 
+				["email"],
+				function (response) { alert(JSON.stringify(response)) },
+				function (response) { alert(JSON.stringify(response)) }
+			);
+
+		} catch(e) {
+			console.log(e.message);
+		}
+	}
 })
