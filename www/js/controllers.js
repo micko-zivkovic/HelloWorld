@@ -71,7 +71,7 @@ angular.module('starter.controllers', [])
 				*/
 				window.plugins.toast.showLongCenter("Error: FB Application not found");
 			}
-			/*
+			
 			facebookConnectPlugin.login( 
 				["email","public_profile"],
 				function (login_success) { 
@@ -83,8 +83,8 @@ angular.module('starter.controllers', [])
 					window.plugins.toast.showLongCenter('Login Error'); 
 				}
 			);
-			*/
-			
+
+			/*
 			facebookConnectPlugin.api( 
 				"me/?fields=id,email",
 				["public_profile"],
@@ -97,7 +97,7 @@ angular.module('starter.controllers', [])
 					window.plugins.toast.showLongCenter('API Error'); 
 				}
 			);
-
+			*/
 		} catch(e) {
 			console.log(e.message);
 			window.plugins.toast.showLongCenter(e.message);
