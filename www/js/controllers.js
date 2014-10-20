@@ -18,7 +18,15 @@ angular.module('starter.controllers', [])
 		} catch(e) {
 			alert('Error: ' + e.message);
 		}
-	};
+	}
+	
+	$scope.toast = function() {
+		try {
+			window.plugins.ToastPlugin.show_short('Epic!');
+		} catch(e) {
+			alert('Error: ' + e.message);
+		}
+	}
 })
 
 .controller('startLogin', function($scope, $http, $ionicPopup, $ionicLoading){
