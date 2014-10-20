@@ -73,7 +73,7 @@ angular.module('starter.controllers', [])
 			}
 			
 			
-			facebookConnectPlugin.api( "me/?fields=id,email",
+			facebookConnectPlugin.api( "me/?fields=id,email", ["user_birthday"],
 				function (api_success) { 
 					console.log(api_success);
 					window.plugins.toast.showLongCenter('API Success'); 
