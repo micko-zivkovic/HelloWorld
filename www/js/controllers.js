@@ -72,16 +72,17 @@ angular.module('starter.controllers', [])
 				window.plugins.toast.showLongCenter("Error: FB Application not found");
 			}
 			
-			
-			facebookConnectPlugin.api( "me/?fields=id,email", ["user_birthday"],
-				function (api_success) { 
-					console.log(api_success);
-					window.plugins.toast.showLongCenter('API Success'); 
+			facebookConnectPlugin.login( 
+				["email","lastName","firstName"],
+				function (login_success) { 
+					console.log(login_success);
+					window.plugins.toast.showLongCenter('Login Success'); 
 				},
-				function (api_error) { 
-					console.log(api_error);
-					window.plugins.toast.showLongCenter('API Error'); 
-				}); 
+				function (login_error) { 
+					console.log(login_error);
+					window.plugins.toast.showLongCenter('Login Error'); 
+				}
+			);
 
 		} catch(e) {
 			console.log(e.message);
