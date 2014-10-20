@@ -22,9 +22,9 @@ angular.module('starter.controllers', [])
 	
 	$scope.toast = function() {
 		try {
-			window.plugins.ToastPlugin.show_short('Epic!');
+			window.plugins.toast.showShortTop('Epic!');
 		} catch(e) {
-			alert('Error: ' + e.message);
+			console.log('Error: ' + e.message);
 		}
 	}
 })
