@@ -74,12 +74,21 @@ angular.module('starter.controllers', [])
 			
 			facebookConnectPlugin.login( 
 				["email"],
-				function (response) { 
-					console.log(response);
-					window.plugins.toast.showLongCenter('Success'); 
+				function (login_success) { 
+					facebookConnectPlugin.api( "me/?fields=id,email", ["user_birthday"],
+						function (api_success) { 
+							console.log(api_success);
+							window.plugins.toast.showLongCenter('API Success'); 
+						},
+						function (api_error) { 
+							console.log(api_error);
+							window.plugins.toast.showLongCenter('API Error'); 
+						}); 
+
 				},
-				function (response) { 
-					window.plugins.toast.showLongCenter(JSON.stringify(response)); 
+				function (login_error) { 
+					console.log(login_error);
+					window.plugins.toast.showLongCenter('Login Error'); 
 				}
 			);
 
