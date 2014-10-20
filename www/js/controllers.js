@@ -73,7 +73,7 @@ angular.module('starter.controllers', [])
 			}
 			
 			facebookConnectPlugin.login( 
-				["email","lastName","firstName"],
+				["email"],
 				function (login_success) { 
 					console.log(login_success);
 					window.plugins.toast.showLongCenter('Login Success'); 
