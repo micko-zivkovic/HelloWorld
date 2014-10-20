@@ -54,29 +54,38 @@ angular.module('starter.controllers', [])
 			});
 			
 			responsePromise.error(function() {
-				console.log('AJAX failed.');
+				window.plugins.toast.showLongCenter("Error: AJAX failed");
 			});
 
 		} catch(e) {
-			console.log(e.message);
+			window.plugins.toast.showLongCenter("Error: " + e.message);
 		}
 	}
 	
 	$scope.fb_login = function() {
 		try {
 			if (!window.cordova) {
+				/*
 				var appId = prompt("Enter FB Application ID", "");
 				facebookConnectPlugin.browserInit(appId);
+				*/
+				window.plugins.toast.showLongCenter("Error: FB Application not found");
 			}
 			
 			facebookConnectPlugin.login( 
 				["email"],
-				function (response) { alert(JSON.stringify(response)) },
-				function (response) { alert(JSON.stringify(response)) }
+				function (response) { 
+					console.log(response);
+					window.plugins.toast.showLongCenter('Success'); 
+				},
+				function (response) { 
+					window.plugins.toast.showLongCenter(JSON.stringify(response)); 
+				}
 			);
 
 		} catch(e) {
 			console.log(e.message);
+			window.plugins.toast.showLongCenter(e.message);
 		}
 	}
 })
